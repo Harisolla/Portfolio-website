@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harikrishna Solla | Software Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <canvas id="canvas3d"></canvas>
+
+    <button class="mobile-nav-toggle d-lg-none" id="mobileToggle" aria-label="Open navigation">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <aside id="sidebar">
+        <button class="sidebar-close-btn d-lg-none" id="sidebarCloseBtn" aria-label="Close sidebar">
+            <i class="bi bi-arrow-left"></i>
+        </button>
+
+        <div class="sidebar-content">
+            <div class="text-center">
+                <img src="assets/photo (2).jpg" alt="Harikrishna Solla" class="profile-img" />
+                <h2 class="profile-name" style="white-space: nowrap;">Harikrishna Solla</h2>
+                <p class="profile-subtitle">Software Developer</p>
+                <div class="text-center mt-2">
+                    <button type="button" class="btn btn-sm btn-outline-warm w-100 mt-2" data-bs-toggle="modal"
+                        data-bs-target="#resumeModal">
+                        <i class="bi bi-file-earmark-person me-1"></i> View Resume
+                    </button>
+
+                    <button type="button" class="theme-toggle-btn w-100 mt-2" id="themeToggle"
+                        aria-label="Toggle theme">
+                        <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                        <span id="themeLabel">Dark Mode</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links d-flex justify-content-center gap-2 my-3">
+                <a href="https://github.com/Harisolla" target="_blank" aria-label="GitHub"><i
+                        class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/harikrishna-solla" target="_blank" aria-label="LinkedIn"><i
+                        class="bi bi-linkedin"></i></a>
+                <a href="mailto:sollahari315@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                <a href="https://x.com/Arivs296440" aria-label="Phone"><i class="bi bi-twitter-x"></i></a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active"><i class="bi bi-house"></i> <span>Home</span></a></li>
+                <li><a href="#about" class="nav-link"><i class="bi bi-person"></i> <span>About</span></a></li>
+                <li><a href="#skills" class="nav-link"><i class="bi bi-cpu"></i> <span>Skills</span></a></li>
+                <li><a href="#experience" class="nav-link"><i class="bi bi-briefcase"></i> <span>Experience</span></a>
+                </li>
+                <li><a href="#education" class="nav-link"><i class="bi bi-mortarboard"></i> <span>Education</span></a>
+                </li>
+                <li><a href="#projects" class="nav-link"><i class="bi bi-box"></i> <span>Projects</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="bi bi-envelope-paper"></i> <span>Contact</span></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer text-center">
+            <small>&copy; 2026 Harikrishna Solla.<br>Built with ♡</small>
+        </div>
+    </aside>
+
+    <main id="main">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="d-flex align-items-center min-vh-100">
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-11">
+                        <span class="badge badge-warm mb-3 reveal-hero" style="--d: 0.1s;">
+                            <i class="bi bi-circle-fill me-1" style="font-size: 8px;"></i> Open for Software Roles
+                        </span>
+                        <h1 class="display-3 fw-bold hero-title mb-2 line-mask">
+                            <span style="--d: 0.25s;">Harikrishna Solla</span>
+                        </h1>
+                        <p class="fs-2 hero-subtitle mb-4 reveal-hero" style="--d: 0.4s;">
+                            I build <span class="typed-text-accent" id="typed-text"></span>
+                        </p>
+                        <p class="hero-description text-muted mb-4 col-md-10 fs-5 reveal-hero" style="--d: 0.55s;">
+                            Detail-oriented Software Developer with hands-on experience in full SDLC, multi-tier
+                            architectures, MERN stack, and Django.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap reveal-hero" style="--d: 0.75s;">
+                            <a href="#experience" class="btn btn-terracotta px-4 py-2">View Experience <i
+                                    class="bi bi-arrow-right"></i></a>
+                            <button type="button"
+                                class="btn btn-outline-warm px-4 py-2 d-inline-flex align-items-center gap-2"
+                                data-bs-toggle="modal" data-bs-target="#resumeModal">
+                                <i class="bi bi-eye-fill"></i> View Resume
+                            </button>
+                            <a href="#contact" class="btn btn-outline-warm px-4 py-2">Get in Touch <i
+                                    class="bi bi-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT SECTION -->
+        <section id="about">
+            <div class="container-fluid p-0">
+                <h2 class="section-title line-mask"><span>About Me</span></h2>
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-9">
+                        <h3 class="lead-heading fw-bold text-espresso mb-3 reveal">
+                            Software Developer passionate about building <em class="accent">scalable, reliable</em> web
+                            systems.
+                        </h3>
+
+                        <blockquote class="about-quote reveal">
+                            <i class="bi bi-quote"></i>
+                            <p>Engineered with precision at the backend, polished with purpose at the frontend.</p>
+                        </blockquote>
+
+                        <p class="text-muted reveal mb-4">
+                            I am interested in building responsive, high-performance web applications, designing clean
+                            REST APIs, and architecting secure backend services using the <strong>MERN stack</strong>
+                            and <strong>Django</strong>. I enjoy solving complex logic challenges, writing maintainable
+                            code, and turning product ideas into scalable digital solutions.
+                        </p>
+
+                        <div class="row g-3 mt-2">
+                            <div class="col-sm-6">
+                                <div class="card-warm p-3">
+                                    <span class="text-terracotta fw-bold d-block mb-1"><i
+                                            class="bi bi-envelope me-1"></i> Email</span>
+                                    <span class="text-espresso fw-semibold">sollahari315@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card-warm p-3">
+                                    <span class="text-terracotta fw-bold d-block mb-1"><i
+                                            class="bi bi-telephone me-1"></i> Phone</span>
+                                    <span class="text-espresso fw-semibold">+91-8179341934</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card-warm p-3">
+                                    <span class="text-terracotta fw-bold d-block mb-1"><i
+                                            class="bi bi-mortarboard me-1"></i> Education</span>
+                                    <span class="text-espresso fw-semibold">B.Tech CSE (9.05 CGPA)</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card-warm p-3">
+                                    <span class="text-terracotta fw-bold d-block mb-1"><i class="bi bi-award me-1"></i>
+                                        Leadership</span>
+                                    <span class="text-espresso fw-semibold">Hackathon Organizer (200+ Attendees)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TECHNICAL SKILLS SECTION (3D TILT CARDS) -->
+        <section id="skills">
+            <div class="container-fluid p-0">
+                <h2 class="section-title line-mask">Technical Skills</h2>
+                <p class="text-muted mb-4 reveal">Core competencies and tech stacks categorized across development
+                    layers.</p>
+
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card-warm skill-card" data-tilt>
+                            <div class="skill-icon"><i class="bi bi-code-slash"></i></div>
+                            <h5 class="fw-bold mb-1">Programming</h5>
+                            <p class="small text-muted mb-3">C++, Python, Java, JavaScript</p>
+                            <div class="progress-warm">
+                                <div class="progress-bar-warm" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card-warm skill-card" data-tilt>
+                            <div class="skill-icon"><i class="bi bi-layers-fill"></i></div>
+                            <h5 class="fw-bold mb-1">Web Technologies</h5>
+                            <p class="small text-muted mb-3">MERN, Next.js, Redux Toolkit, Django, REST APIs</p>
+                            <div class="progress-warm">
+                                <div class="progress-bar-warm" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card-warm skill-card" data-tilt>
+                            <div class="skill-icon"><i class="bi bi-database-fill-gear"></i></div>
+                            <h5 class="fw-bold mb-1">Databases &amp; Tools</h5>
+                            <p class="small text-muted mb-3">MongoDB, SQL, MySQL, Git, GitHub</p>
+                            <div class="progress-warm">
+                                <div class="progress-bar-warm" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="card-warm skill-card" data-tilt>
+                            <div class="skill-icon"><i class="bi bi-diagram-3-fill"></i></div>
+                            <h5 class="fw-bold mb-1">Core CS</h5>
+                            <p class="small text-muted mb-3">Data Structures, Algorithms, DBMS, OS, OOPS, SDLC</p>
+                            <div class="progress-warm">
+                                <div class="progress-bar-warm" style="width: 94%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. EXPERIENCE & CERTIFICATIONS SECTION -->
+        <section id="experience">
+            <div class="container-fluid p-0">
+                <h2 class="section-title line-mask">Experience &amp; Certifications</h2>
+
+                <div class="row g-4">
+                    <!-- Work Experience -->
+                    <div class="col-lg-7">
+                        <h4 class="fw-bold mb-3 text-espresso"><i
+                                class="bi bi-briefcase-fill text-terracotta me-2"></i>Work Experience</h4>
+
+                        <div class="card-warm p-4 mb-3">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-2">
+                                <h5 class="fw-bold text-espresso mb-0">Software Developer Intern</h5>
+                                <span class="badge badge-tag">Dec 2025 – Jan 2026</span>
+                            </div>
+                            <p class="text-terracotta fw-semibold mb-2">Tooclarity &bull; Remote</p>
+                            <ul class="text-muted small ps-3 mb-0">
+                                <li class="mb-1">Developed responsive UIs using Next.js and TypeScript, ensuring
+                                    high-performance rendering.</li>
+                                <li class="mb-1">Managed state with Redux Toolkit, reducing prop-drilling and improving
+                                    data flow in complex modules.</li>
+                                <li class="mb-1">Integrated RESTful APIs for real-time dashboard updates and handled
+                                    asynchronous data synchronization.</li>
+                                <li>Collaborated on UI/UX by translating wireframes into reusable React components and
+                                    authored documentation.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Certifications & Positions -->
+                    <div class="col-lg-5">
+                        <h4 class="fw-bold mb-3 text-espresso"><i
+                                class="bi bi-patch-check-fill text-terracotta me-2"></i>Certifications &amp; Leadership
+                        </h4>
+
+                        <div class="card-warm p-3 mb-3">
+                            <span class="badge badge-tag mb-1">NPTEL &bull; IIT Madras</span>
+                            <h6 class="fw-bold text-espresso mb-1">Python for Data Science</h6>
+                            <p class="text-muted small mb-0">Certified specialization in data manipulation and
+                                algorithms.</p>
+                        </div>
+
+                        <div class="card-warm p-3 mb-3">
+                            <span class="badge badge-tag mb-1">Deloitte &bull; Forage</span>
+                            <h6 class="fw-bold text-espresso mb-1">Technology Job Simulation</h6>
+                            <p class="text-muted small mb-0">Completed technology simulation and architecture exercises
+                                (June 2025).</p>
+                        </div>
+
+                        <div class="card-warm p-3">
+                            <span class="badge badge-tag mb-1">Leadership &bull; RGUKT</span>
+                            <h6 class="fw-bold text-espresso mb-1">Hackathon Organizer</h6>
+                            <p class="text-muted small mb-0">Managed logistics and technical coordination for 200+
+                                participants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. EDUCATION SECTION -->
+        <section id="education">
+            <div class="container-fluid p-0">
+                <h2 class="section-title line-mask">Education</h2>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card-warm p-4 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <span class="badge badge-tag mb-2">2022 – 2026</span>
+                                <h5 class="fw-bold text-espresso mb-1">B.Tech in CSE</h5>
+                                <p class="text-muted small mb-2">RGUKT, Srikakulam</p>
+                            </div>
+                            <div class="mt-3">
+                                <span class="text-terracotta fw-bold fs-5">CGPA: 9.05 / 10.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card-warm p-4 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <span class="badge badge-tag mb-2">2020 – 2022</span>
+                                <h5 class="fw-bold text-espresso mb-1">PUC (MPC Equivalent)</h5>
+                                <p class="text-muted small mb-2">RGUKT, Srikakulam</p>
+                            </div>
+                            <div class="mt-3">
+                                <span class="text-terracotta fw-bold fs-5">CGPA: 9.71 / 10.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card-warm p-4 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <span class="badge badge-tag mb-2">2019 – 2020</span>
+                                <h5 class="fw-bold text-espresso mb-1">Secondary Education (Class X)</h5>
+                                <p class="text-muted small mb-2">Narayana E-techno School, Palasa</p>
+                            </div>
+                            <div class="mt-3">
+                                <span class="text-terracotta fw-bold fs-5">CGPA: 10.0 / 10.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PROJECTS SECTION (Placeholder for your custom projects) -->
+        <section id="projects">
+            <div class="container-fluid p-0">
+                <h2 class="section-title line-mask">Featured Projects</h2>
+
+                <!-- 3D Helix Carousel Viewport -->
+                <div class="helix-viewport" id="helixViewport">
+                    <div class="helix-cylinder" id="helixCylinder">
+
+                        <article class="helix-item project-card" style="transform: rotateY(0deg) translateZ(270px);"
+                            data-bs-toggle="modal" data-bs-target="#modalProject1">
+                            <div class="project-img-wrap">
+                                <img src="assets/Screenshot 2026-08-12 152241.png" alt="Browser-OS" loading="lazy" />
+                                <span class="project-num">01</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-cat">OS Simulation &amp; Architecture</span>
+                                <h3 class="project-name">Browser-OS</h3>
+                                <p class="project-desc">A web-based operating system interface inside the browser
+                                    featuring window
+                                    management, interactive desktop icons, and simulated file systems.</p>
+                                <div class="project-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                                </div>
+                                <div class="project-actions" onclick="event.stopPropagation();">
+                                    <a href="https://harisolla.github.io/Browser-OS/" target="_blank" rel="noopener"
+                                        class="project-btn primary">Live Demo <i class="bi bi-arrow-up-right"></i></a>
+                                    <a href="https://github.com/Harisolla/Browser-os" target="_blank" rel="noopener"
+                                        class="project-btn ghost">GitHub <i class="bi bi-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="helix-item project-card" style="transform: rotateY(60deg) translateZ(270px);"
+                            data-bs-toggle="modal" data-bs-target="#modalProject2">
+                            <div class="project-img-wrap">
+                                <img src="assets/Screenshot 2026-08-14 194751.png" alt="AlgoVision" loading="lazy" />
+                                <span class="project-num">02</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-cat">Data Structures &amp; Algorithms</span>
+                                <h3 class="project-name">AlgoVision</h3>
+                                <p class="project-desc">Algorithm visualizer and inspector designed for step-by-step
+                                    graphical execution of sorting algorithms.</p>
+                                <div class="project-tags">
+                                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Sorting</span>
+                                </div>
+                                <div class="project-actions" onclick="event.stopPropagation();">
+                                    <a href="https://harisolla.github.io/AlgoVision---Algorithm-Visualizer-Inspector/"
+                                        target="_blank" rel="noopener" class="project-btn primary">Live Demo <i
+                                            class="bi bi-arrow-up-right"></i></a>
+                                    <a href="https://github.com/Harisolla/AlgoVision---Algorithm-Visualizer-Inspector"
+                                        target="_blank" rel="noopener" class="project-btn ghost">GitHub <i
+                                            class="bi bi-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="helix-item project-card" style="transform: rotateY(120deg) translateZ(270px);"
+                            data-bs-toggle="modal" data-bs-target="#modalProject3">
+                            <div class="project-img-wrap">
+                                <img src="assets/1706939888964.jpg" alt="MERN LMS" loading="lazy" />
+                                <span class="project-num">03</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-cat">Full-Stack Enterprise LMS</span>
+                                <h3 class="project-name">EduSphere (LMS)</h3>
+                                <p class="project-desc">Enterprise role-based learning platform with nested course
+                                    schemas, JWT authentication, and analytics dashboards.</p>
+                                <div class="project-tags">
+                                    <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span>
+                                </div>
+                                <div class="project-actions" onclick="event.stopPropagation();">
+                                    <a href="https://github.com/Harisolla/MERN-Learning-Management-System"
+                                        target="_blank" rel="noopener" class="project-btn primary">Live Demo <i
+                                            class="bi bi-arrow-up-right"></i></a>
+                                    <a href="https://github.com/Harisolla/MERN-Learning-Management-System"
+                                        target="_blank" rel="noopener" class="project-btn ghost">GitHub <i
+                                            class="bi bi-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="helix-item project-card" style="transform: rotateY(180deg) translateZ(270px);"
+                            data-bs-toggle="modal" data-bs-target="#modalProject4">
+                            <div class="project-img-wrap">
+                                <img src="assets/Screenshot 2026-08-12 153244.png" alt="QRENTRY" loading="lazy" />
+                                <span class="project-num">04</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-cat">Event Ticketing System</span>
+                                <h3 class="project-name">QRENTRY</h3>
+                                <p class="project-desc">Event ticketing system with role-based access, automated QR
+                                    generation, ticket validation, and PDF confirmations.</p>
+                                <div class="project-tags">
+                                    <span>HTML5</span><span>CSS3</span><span>Django</span><span>SQLite</span>
+                                </div>
+                                <div class="project-actions" onclick="event.stopPropagation();">
+                                    <a href="https://qrentry-1-4yfa.onrender.com/" target="_blank" rel="noopener"
+                                        class="project-btn primary">Live Demo <i class="bi bi-arrow-up-right"></i></a>
+                                    <a href="https://github.com/Harisolla/QRENTRY" target="_blank" rel="noopener"
+                                        class="project-btn ghost">GitHub <i class="bi bi-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="helix-item project-card" style="transform: rotateY(240deg) translateZ(270px);"
+                            data-bs-toggle="modal" data-bs-target="#modalProject5">
+                            <div class="project-img-wrap">
+                                <img src="assets/Screenshot 2026-04-04 120820.png" alt="QAuth" loading="lazy" />
+                                <span class="project-num">05</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-cat">Quantum Authentication platform</span>
+                                <h3 class="project-name">QAuth</h3>
+                                <p class="project-desc">Integrates multiple security layers into a single authentication
+                                    platform with quantum-derived secrets.</p>
+                                <div class="project-tags">
+                                    <span>React</span><span>Django</span><span>DRF</span><span>PostgreSQL</span>
+                                </div>
+                                <div class="project-actions" onclick="event.stopPropagation();">
+                                    <a href="https://q-auth-platform.onrender.com/" target="_blank" rel="noopener"
+                                        class="project-btn primary">Live Demo <i class="bi bi-arrow-up-right"></i></a>
+                                    <a href="https://github.com/Harisolla/QAuth" target="_blank" rel="noopener"
+                                        class="project-btn ghost">GitHub <i class="bi bi-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="helix-item project-card" style="transform: rotateY(300deg) translateZ(270px);"
+                            data-bs-toggle="modal" data-bs-target="#modalProject6">
+                            <div class="project-img-wrap">
+                                <img src="assets/desktop-design.jpg" alt="Bookmark Landing" loading="lazy" />
+                                <span class="project-num">06</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-cat">Landing Page &amp; UI</span>
+                                <h3 class="project-name">Bookmark Landing</h3>
+                                <p class="project-desc">A modern responsive product landing page featuring clean tabbed
+                                    navigation, accordion FAQs, and form validation.</p>
+                                <div class="project-tags">
+                                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Flexbox</span>
+                                </div>
+                                <div class="project-actions" onclick="event.stopPropagation();">
+                                    <a href="https://github.com/Harisolla/Bookmark-landing-page" target="_blank"
+                                        rel="noopener" class="project-btn primary">Live Demo <i
+                                            class="bi bi-arrow-up-right"></i></a>
+                                    <a href="https://github.com/Harisolla/Bookmark-landing-page" target="_blank"
+                                        rel="noopener" class="project-btn ghost">GitHub <i
+                                            class="bi bi-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3 mt-4 mb-2">
+                    <button class="btn-helix-nav" id="prevBtn" aria-label="Previous project">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="btn-helix-nav" id="nextBtn" aria-label="Next project">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CONTACT SECTION -->
+        <section id="contact">
+            <div class="container-fluid p-0">
+                <h2 class="section-title line-mask">Get in Touch</h2>
+                <p class="text-muted mb-4 reveal">
+                    Have an opportunity, questions about my work, or want to collaborate? Send me a message!
+                </p>
+
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <div class="d-flex flex-column gap-3">
+                            <div class="card-warm p-4 d-flex align-items-center flex-row gap-3">
+                                <div class="contact-icon-box"><i class="bi bi-envelope"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Email</h6>
+                                    <p class="text-muted small mb-0">sollahari315@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="card-warm p-4 d-flex align-items-center flex-row gap-3">
+                                <div class="contact-icon-box"><i class="bi bi-telephone"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Phone</h6>
+                                    <p class="text-muted small mb-0">+91-8179341934</p>
+                                </div>
+                            </div>
+
+                            <div class="card-warm p-4 d-flex align-items-center flex-row gap-3">
+                                <div class="contact-icon-box"><i class="bi bi-geo-alt"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Location</h6>
+                                    <p class="text-muted small mb-0">Andhra Pradesh, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="card-warm p-4 p-md-5">
+                            <div id="formAlert" class="alert alert-warm d-none mb-4" role="alert">
+                                <i class="bi bi-check-circle-fill me-2"></i>
+                                <span>Thank you! Your message has been saved successfully.</span>
+                            </div>
+
+                            <form id="contactForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-semibold text-muted">Your Name</label>
+                                        <input type="text" name="name" id="senderName"
+                                            class="form-control form-control-warm" placeholder="Jane Doe" required />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-semibold text-muted">Your Email</label>
+                                        <input type="email" name="email" id="senderEmail"
+                                            class="form-control form-control-warm" placeholder="jane@example.com"
+                                            required />
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-semibold text-muted">Subject</label>
+                                        <input type="text" name="subject" id="subject"
+                                            class="form-control form-control-warm"
+                                            placeholder="Job Opportunity / Project Inquiry" required />
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-semibold text-muted">Message</label>
+                                        <textarea name="message" id="message" rows="4"
+                                            class="form-control form-control-warm"
+                                            placeholder="Tell me about your role or project scope..."
+                                            required></textarea>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" id="submitBtn"
+                                            class="btn btn-terracotta px-4 py-2 d-inline-flex align-items-center gap-2">
+                                            <span>Send Message</span>
+                                            <i class="bi bi-send-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content modal-warm">
+
+                <div class="modal-header border-0 pb-0 d-flex justify-content-between align-items-center w-100">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-file-earmark-pdf-fill text-terracotta fs-4"></i>
+                        <div>
+                            <h5 class="modal-title fw-bold text-espresso mb-0" id="resumeModalLabel">Harikrishna Solla —
+                                Resume</h5>
+                            <small class="text-muted">Software Developer</small>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-2 ms-auto">
+                        <a href="assets/H_resume.pdf" download="Harikrishna_Solla_Resume.pdf"
+                            class="btn btn-sm btn-terracotta px-3 py-1 d-inline-flex align-items-center gap-1">
+                            <i class="bi bi-download"></i> <span>Download PDF</span>
+                        </a>
+                        <button type="button" class="btn-close ms-1" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+
+                <div class="modal-body pt-3">
+                    <div class="pdf-viewer-container">
+                        <!-- Embeds the PDF directly inside browser -->
+                        <iframe src="assets/H_resume.pdf#toolbar=1" class="pdf-iframe"
+                            title="Harikrishna Solla Resume"></iframe>
+                    </div>
+                </div>
+
+                <div class="modal-footer border-0 pt-0 justify-content-between">
+                    <small class="text-muted">Having trouble viewing? <a href="assets/H_resume.pdf" target="_blank"
+                            class="text-terracotta fw-semibold">Open in new tab</a></small>
+                    <button type="button" class="btn btn-sm btn-outline-warm" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade project-popup-modal" id="modalProject1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modal-warm">
+                <div class="modal-header border-0 pb-0">
+                    <span class="badge badge-tag">01 &bull; OS Simulation</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="popup-img-wrap mb-3">
+                        <img src="assets/Screenshot 2026-08-12 152241.png" alt="Browser-OS" class="img-fluid rounded" />
+                    </div>
+                    <h3 class="fw-bold text-espresso mb-2">Browser-OS</h3>
+                    <p class="text-muted">A full web-based operating system interface inside the browser featuring
+                        drag-and-drop window management, customizable desktop icons, taskbar dock, and a simulated file
+                        system hierarchy.</p>
+                    <div class="project-tags mb-4">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>DOM API</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://harisolla.github.io/Browser-OS/" target="_blank"
+                            class="btn btn-terracotta flex-grow-1"><i class="bi bi-box-arrow-up-right me-1"></i> Live
+                            Demo</a>
+                        <a href="https://github.com/Harisolla/Browser-os" target="_blank"
+                            class="btn btn-outline-warm flex-grow-1"><i class="bi bi-github me-1"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade project-popup-modal" id="modalProject2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modal-warm">
+                <div class="modal-header border-0 pb-0">
+                    <span class="badge badge-tag">02 &bull; Algorithms</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="popup-img-wrap mb-3">
+                        <img src="assets/Screenshot 2026-08-14 194751.png" alt="AlgoVision" class="img-fluid rounded" />
+                    </div>
+                    <h3 class="fw-bold text-espresso mb-2">AlgoVision</h3>
+                    <p class="text-muted">An interactive algorithm visualizer and inspector tool designed for
+                        step-by-step graphical execution of complex sorting and pathfinding routines with speed and
+                        array size controls.</p>
+                    <div class="project-tags mb-4">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Sorting</span><span>DSA</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://harisolla.github.io/AlgoVision---Algorithm-Visualizer-Inspector/"
+                            target="_blank" class="btn btn-terracotta flex-grow-1"><i
+                                class="bi bi-box-arrow-up-right me-1"></i> Live Demo</a>
+                        <a href="https://github.com/Harisolla/AlgoVision---Algorithm-Visualizer-Inspector"
+                            target="_blank" class="btn btn-outline-warm flex-grow-1"><i class="bi bi-github me-1"></i>
+                            View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade project-popup-modal" id="modalProject3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modal-warm">
+                <div class="modal-header border-0 pb-0">
+                    <span class="badge badge-tag">03 &bull; MERN LMS</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="popup-img-wrap mb-3">
+                        <img src="assets/1706939888964.jpg" alt="EduSphere" class="img-fluid rounded" />
+                    </div>
+                    <h3 class="fw-bold text-espresso mb-2">EduSphere (LMS)</h3>
+                    <p class="text-muted">Enterprise role-based learning management system designed with nested course
+                        schemas, granular JWT authorization middleware, instructor dashboard, and progress tracking
+                        analytics.</p>
+                    <div class="project-tags mb-4">
+                        <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://github.com/Harisolla/MERN-Learning-Management-System" target="_blank"
+                            class="btn btn-terracotta flex-grow-1"><i class="bi bi-box-arrow-up-right me-1"></i> Live
+                            Demo</a>
+                        <a href="https://github.com/Harisolla/MERN-Learning-Management-System" target="_blank"
+                            class="btn btn-outline-warm flex-grow-1"><i class="bi bi-github me-1"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade project-popup-modal" id="modalProject4" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modal-warm">
+                <div class="modal-header border-0 pb-0">
+                    <span class="badge badge-tag">04 &bull; Django System</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="popup-img-wrap mb-3">
+                        <img src="assets/Screenshot 2026-08-12 153244.png" alt="QRENTRY" class="img-fluid rounded" />
+                    </div>
+                    <h3 class="fw-bold text-espresso mb-2">QRENTRY</h3>
+                    <p class="text-muted">An event ticketing and attendance management platform built with Django.
+                        Handles attendee bookings, dynamic QR generation and camera validation, and automated PDF ticket
+                        confirmations.</p>
+                    <div class="project-tags mb-4">
+                        <span>Python</span><span>Django</span><span>SQLite</span><span>Render</span><span>Gunicorn</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://qrentry-1-4yfa.onrender.com/" target="_blank"
+                            class="btn btn-terracotta flex-grow-1"><i class="bi bi-box-arrow-up-right me-1"></i> Live
+                            Demo</a>
+                        <a href="https://github.com/Harisolla/QRENTRY" target="_blank"
+                            class="btn btn-outline-warm flex-grow-1"><i class="bi bi-github me-1"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade project-popup-modal" id="modalProject5" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modal-warm">
+                <div class="modal-header border-0 pb-0">
+                    <span class="badge badge-tag">05 &bull; Security</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="popup-img-wrap mb-3">
+                        <img src="assets/Screenshot 2026-04-04 120820.png" alt="QAuth" class="img-fluid rounded" />
+                    </div>
+                    <h3 class="fw-bold text-espresso mb-2">QAuth</h3>
+                    <p class="text-muted">A security platform integrating multiple verification layers into a single
+                        auth microservice, combining traditional token validation with quantum-derived encryption
+                        secrets.</p>
+                    <div class="project-tags mb-4">
+                        <span>React</span><span>Django</span><span>DRF</span><span>PostgreSQL</span><span>Bcrypt</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://q-auth-platform.onrender.com/" target="_blank"
+                            class="btn btn-terracotta flex-grow-1"><i class="bi bi-box-arrow-up-right me-1"></i> Live
+                            Demo</a>
+                        <a href="https://github.com/Harisolla/QAuth" target="_blank"
+                            class="btn btn-outline-warm flex-grow-1"><i class="bi bi-github me-1"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade project-popup-modal" id="modalProject6" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modal-warm">
+                <div class="modal-header border-0 pb-0">
+                    <span class="badge badge-tag">06 &bull; Frontend UI</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="popup-img-wrap mb-3">
+                        <img src="assets/desktop-design.jpg" alt="Bookmark Landing" class="img-fluid rounded" />
+                    </div>
+                    <h3 class="fw-bold text-espresso mb-2">Bookmark Landing</h3>
+                    <p class="text-muted">A modern product landing page featuring clean tabbed content switches,
+                        collapsible accordion FAQs, and real-time newsletter form validation.</p>
+                    <div class="project-tags mb-4">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Flexbox</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://github.com/Harisolla/Bookmark-landing-page" target="_blank"
+                            class="btn btn-terracotta flex-grow-1"><i class="bi bi-box-arrow-up-right me-1"></i> Live
+                            Demo</a>
+                        <a href="https://github.com/Harisolla/Bookmark-landing-page" target="_blank"
+                            class="btn btn-outline-warm flex-grow-1"><i class="bi bi-github me-1"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- External CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
