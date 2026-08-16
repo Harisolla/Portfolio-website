@@ -445,6 +445,21 @@ section {
     line-height: 1.45;
 }
 
+.about-quote .w-reveal {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 2.5s ease, transform 2.1s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 0s;
+    will-change: transform, opacity;
+}
+
+.about-quote.visible .w-reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: var(--d, 0s);
+}
+
 .skill-card {
     padding: 1.5rem;
     transform-style: preserve-3d;

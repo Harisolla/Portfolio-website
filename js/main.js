@@ -429,34 +429,37 @@ document.addEventListener("DOMContentLoaded", () => {
      Subtle Scroll Reveal Observer
      --------------------------------------------------------- */
   const animatedElements = document.querySelectorAll(
-    ".line-mask, .reveal, .card-warm, #contactForm, .helix-viewport",
+    ".line-mask, .reveal, .card-warm, #contactForm, .helix-viewport"
   );
 
   const scrollObserver = new IntersectionObserver(
-    (entries, observer) => {
+    (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          // Trigger the animation when scrolling IN
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target); // Trigger once smoothly
+        } else {
+          // Reset the animation state when scrolling OUT
+          entry.target.classList.remove("visible");
         }
       });
     },
     {
-      threshold: 0.12,
-      rootMargin: "0px 0px -50px 0px",
-    },
+      threshold: 0.15,
+      rootMargin: "0px 0px -40px 0px",
+    }
   );
 
-  animatedElements.forEach((el, index) => {
-    // Add reveal class if it's not already a line-mask
+  animatedElements.forEach((el) => {
     if (!el.classList.contains("line-mask")) {
       el.classList.add("reveal");
     }
 
-    // Auto-stagger sibling cards in grids
     const parentRow = el.closest(".row");
     if (parentRow) {
-      const siblings = Array.from(parentRow.querySelectorAll(".card-warm"));
+      const siblings = Array.from(
+        parentRow.querySelectorAll(".card-warm, .skill-card, .stat-card")
+      );
       const siblingIndex = siblings.indexOf(el);
       if (siblingIndex > 0) {
         el.classList.add(`stagger-${Math.min(siblingIndex, 4)}`);
