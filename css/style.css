@@ -17,6 +17,11 @@
     --font-body: "Manrope", -apple-system, sans-serif;
 }
 
+::selection {
+    background-color: var(--accent-terracotta);
+    color: #ffffff;
+}
+
 [data-theme="dark"] {
     --bg-body: #121110;
     --bg-surface: #1a1816;
