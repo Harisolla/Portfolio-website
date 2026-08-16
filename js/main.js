@@ -143,44 +143,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const typedEl = document.getElementById("typed-text");
   if (typedEl) {
-    const words = [
+    const phrases = [
       "Clean & Modern Interfaces.",
       "MERN Stack Applications.",
       "Django Web Applications.",
-      "Java Full-stack Applications."
+      "Java Full-Stack Applications."
     ];
 
-    let wordIndex = 0;
+    let pIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typeSpeed = 70;
 
-    function runTyping() {
-      const currentWord = words[wordIndex];
+    function typeLoop() {
+      
+      const chars = Array.from(phrases[pIndex]);
+      let speed = 75;
 
       if (isDeleting) {
-        typedEl.textContent = currentWord.substring(0, charIndex - 1);
         charIndex--;
-        typeSpeed = 35;
+        typedEl.innerText = chars.slice(0, charIndex).join("");
+        speed = 35;
       } else {
-        typedEl.textContent = currentWord.substring(0, charIndex + 1);
         charIndex++;
-        typeSpeed = 75;
+        typedEl.innerText = chars.slice(0, charIndex).join("");
+        speed = 75;
       }
 
-      if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = 1600; 
+      if (!isDeleting && charIndex === chars.length) {
+        speed = 1800;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 350; 
+        pIndex = (pIndex + 1) % phrases.length;
+        speed = 400;
       }
 
-      setTimeout(runTyping, typeSpeed);
+      setTimeout(typeLoop, speed);
     }
 
-    setTimeout(runTyping, 400);
+    setTimeout(typeLoop, 500);
   }
 
   const canvas = document.getElementById("canvas3d");
