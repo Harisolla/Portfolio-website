@@ -621,14 +621,14 @@ section {
 }
 
 .project-name {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--text-espresso);
     margin-bottom: 0.15rem;
 }
 
 .project-desc {
-    font-size: 0.76rem;
+    font-size: 0.86rem;
     color: var(--text-muted);
     line-height: 1.35;
     margin-bottom: 0.35rem;
