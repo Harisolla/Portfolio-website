@@ -141,19 +141,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  if (document.getElementById("typed-text")) {
-    new Typed("#typed-text", {
-      strings: [
-        "Clean & Modern Interfaces",
-        "MERN Stack Applications",
-        "Django Web Applications",
-        "Java Full-stack Applications",
-      ],
-      typeSpeed: 55,
-      backSpeed: 35,
-      backDelay: 1800,
-      loop: true,
-    });
+  const typedEl = document.getElementById("typed-text");
+  if (typedEl) {
+    const words = [
+      "Clean & Modern Interfaces.",
+      "MERN Stack Applications.",
+      "Django Web Applications.",
+      "Java Full-stack Applications."
+    ];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 70;
+
+    function runTyping() {
+      const currentWord = words[wordIndex];
+
+      if (isDeleting) {
+        typedEl.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+        typeSpeed = 35;
+      } else {
+        typedEl.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+        typeSpeed = 75;
+      }
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        typeSpeed = 1600; 
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typeSpeed = 350; 
+      }
+
+      setTimeout(runTyping, typeSpeed);
+    }
+
+    setTimeout(runTyping, 400);
   }
 
   const canvas = document.getElementById("canvas3d");
